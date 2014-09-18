@@ -11,14 +11,17 @@
 ##
 ###############################################################################
 
-## Write a short comment describing this function
+## makeCacheMatrix) allows an object containing a matrix  
+## to be created that has operations defined on it 
+## that support caching. 
 
 makeCacheMatrix <- function(x = matrix()) {
 	invMat<-NULL
 
 	# allow setting the matrix
 	set<-function(y){
-		# We have to set a new value for x by reaching up with <<-
+		# We have to set a new value for x by reaching up 
+		# with the <<- operator.
 		x<<-y
 
 		# And, of course, null out the cached inversion of x
@@ -49,7 +52,8 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Write a short comment describing this function
+## cacheSolve uses the first function/object to implement a 
+## cache for the value of the matrix inversion.
 
 cacheSolve <- function(x, ...) {
 
